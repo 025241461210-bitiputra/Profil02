@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yusuf Anrula Iputra | Futsal Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #07152c;
+  color: white;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  background: #091b35;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #60a5fa;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
+/* HOME */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 65px 8%;
+  background: linear-gradient(120deg,#07152c,#102c50);
+}
+
+.hero-text {
+  max-width: 580px;
+}
+
+.hero-text h4 {
+  color: #60a5fa;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 {
+  font-size: clamp(38px,6vw,65px);
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.hero-text h1 span {
+  color: #60a5fa;
+}
+
+.hero-text p {
+  color: #cbd5e1;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 13px 25px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+/* FOTO PROFIL UTAMA */
+.hero img {
+  width: 360px;
+  max-width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+  border: 3px solid #60a5fa;
+  box-shadow: 0 0 25px rgba(37,99,235,.35);
+}
+
+/* SECTION */
+section {
+  padding: 80px 8%;
+}
+
+.judul {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.garis {
+  width: 65px;
+  height: 4px;
+  background: #60a5fa;
+  margin-bottom: 35px;
+}
+
+/* PROFIL */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.about p {
+  color: #cbd5e1;
+  line-height: 1.9;
+}
+
+.data {
+  background: #102746;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.data p {
+  padding: 12px 0;
+  border-bottom: 1px solid #29415f;
+}
+
+.data strong {
+  color: #60a5fa;
+}
+
+/* GALERI */
+#prestasi {
+  background: #0b1e38;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.card {
+  background: #102746;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  color: #60a5fa;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* SKILL */
+.statistik {
+  background: #102746;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.stat {
+  margin: 22px 0;
+}
+
+.stat-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.bar {
+  background: #263e5d;
+  height: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 20px;
+}
+
+/* KONTAK */
+.contact {
+  text-align: center;
+  background: #102746;
+  border-radius: 15px;
+  padding: 40px 20px;
+}
+
+.contact p {
+  color: #cbd5e1;
+  margin: 15px;
+}
+
+.contact a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #091b35;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px) {
+  nav {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  nav a {
+    margin: 0 7px;
+    font-size: 12px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero img {
+    width: 100%;
+    max-width: 360px;
+    height: 420px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">YUSUF IPUTRA.</div>
+
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">Profil</a>
+    <a href="#prestasi">Galeri</a>
+    <a href="#skill">Skill</a>
+    <a href="#contact">Kontak</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="hero" id="home">
+
+  <div class="hero-text">
+
+    <h4>WELCOME TO MY PORTFOLIO</h4>
+
+    <h1>
+      YUSUF ANRULA
+      <span>IPUTRA</span>
+    </h1>
+
+    <p>
+      Mahasiswa Sekolah Tinggi Multimedia
+      yang memiliki passion dalam dunia olahraga,
+      khususnya futsal. Bermain sebagai Pivot
+      bersama tim Futsal STMM Yogyakarta.
+      Pernah mengikuti kompetisi Campus League
+      Yogyakarta.
+    </p>
+
+    <a href="#about" class="btn">
+      LIHAT PROFIL SAYA
+    </a>
+
+  </div>
+
+  <!-- FOTO PROFIL KAMU -->
+  <img src="foto/profil.jpg"
+       alt="Foto Profil Yusuf Anrula Iputra">
+
+</div>
+
+<!-- PROFIL -->
+<section id="about">
+
+  <h2 class="judul">TENTANG SAYA</h2>
+  <div class="garis"></div>
+
+  <div class="about">
+
+    <div>
+
+      <h2>Passion, Teamwork, Discipline.</h2>
+      <br>
+
+      <p>
+        Perkenalkan, nama saya Yusuf Anrula Iputra.
+        Saya merupakan mahasiswa Sekolah Tinggi
+        Multimedia Yogyakarta.
+
+        Saya memiliki ketertarikan besar terhadap
+        olahraga futsal dan aktif bermain bersama
+        tim Futsal STMM.
+
+        Saya bermain di posisi Pivot dan pernah
+        mengikuti kompetisi Campus League
+        Yogyakarta.
+
+        Bagi saya, futsal bukan hanya olahraga,
+        tetapi juga tempat belajar mengenai
+        kerja sama, tanggung jawab, disiplin,
+        dan semangat pantang menyerah.
+      </p>
+
+    </div>
+
+    <div class="data">
+
+      <p><strong>Nama:</strong> Yusuf Anrula Iputra</p>
+
+      <p><strong>NIM:</strong> 025241461210</p>
+
+      <p><strong>Kampus:</strong> Sekolah Tinggi Multimedia</p>
+
+      <p><strong>Program Studi:</strong>
+      Manajemen Informasi Komunikasi</p>
+
+      <p><strong>Posisi:</strong> Pivot</p>
+
+      <p><strong>Tim:</strong> Futsal STMM</p>
+
+      <p><strong>Kompetisi:</strong>
+      Campus League Yogyakarta</p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- GALERI -->
+<section id="prestasi">
+
+  <h2 class="judul">GALERI FUTSAL</h2>
+  <div class="garis"></div>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="foto/pertandingan.jpg"
+           alt="Pertandingan futsal">
+      <div class="card-content">
+        <h3>Match Day</h3>
+        <p>
+          Pengalaman bertanding dan memberikan
+          kemampuan terbaik di lapangan.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="foto/tim.jpg"
+           alt="Tim futsal STMM">
+      <div class="card-content">
+        <h3>STMM Futsal</h3>
+        <p>
+          Kebersamaan dan kekompakan bersama
+          keluarga besar tim futsal STMM.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="foto/selebrasi.jpg"
+           alt="Momen pertandingan">
+      <div class="card-content">
+        <h3>Our Moment</h3>
+        <p>
+          Setiap pertandingan memberikan
+          pengalaman dan pelajaran baru.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="foto/aksi.jpg"
+           alt="Aksi pemain">
+      <div class="card-content">
+        <h3>On The Court</h3>
+        <p>
+          Berjuang dan memberikan kontribusi
+          terbaik untuk tim.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="foto/jersey.jpg"
+           alt="Jersey futsal">
+      <div class="card-content">
+        <h3>My Jersey</h3>
+        <p>
+          Menjadi bagian dari perjalanan
+          dan perjuangan di dunia futsal.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="foto/profil.jpg"
+           alt="Profil pemain">
+      <div class="card-content">
+        <h3>Player Profile</h3>
+        <p>
+          Yusuf Anrula Iputra,
+          Futsal Player STMM.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILL -->
+<section id="skill">
+
+  <h2 class="judul">KEMAMPUAN SAYA</h2>
+  <div class="garis"></div>
+
+  <div class="statistik">
+
+    <div class="stat">
+      <div class="stat-head">
+        <strong>Passing</strong>
+        <span>85%</span>
+      </div>
+      <div class="bar">
+        <span style="width:85%"></span>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-head">
+        <strong>Ball Control</strong>
+        <span>80%</span>
+      </div>
+      <div class="bar">
+        <span style="width:80%"></span>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-head">
+        <strong>Teamwork</strong>
+        <span>90%</span>
+      </div>
+      <div class="bar">
+        <span style="width:90%"></span>
+      </div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-head">
+        <strong>Finishing</strong>
+        <span>80%</span>
+      </div>
+      <div class="bar">
+        <span style="width:80%"></span>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="color:#94a3b8;margin-top:15px">
+    *Grafik merupakan ilustrasi awal dan dapat
+    disesuaikan dengan penilaian kemampuan pribadi.
+  </p>
+
+</section>
+
+<!-- KONTAK -->
+<section id="contact">
+
+  <div class="contact">
+
+    <h2 class="judul">LET'S CONNECT</h2>
+
+    <p>
+      Terima kasih telah mengunjungi website
+      profil pribadi saya.
+    </p>
+
+    <p>
+      WhatsApp:
+      <a href="https://wa.me/6282178318927">
+        082178318927
+      </a>
+    </p>
+
+    <p>
+      Instagram:
+      <a href="https://instagram.com/iputraaa.__">
+        @iputraaa.__
+      </a>
+    </p>
+
+    <p>
+      Email:
+      <a href="mailto:yusufanrulaiputra@gmail.com">
+        yusufanrulaiputra@gmail.com
+      </a>
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <p>
+    © 2026 Yusuf Anrula Iputra |
+    Personal Futsal Portfolio
+  </p>
+
+  <p>Built with passion ⚽</p>
+
+</footer>
+
+</body>
+</html>
